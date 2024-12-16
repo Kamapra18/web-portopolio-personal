@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio</title>
+
+  <!-- on scroll -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+  <style>
+    *{
+      border: 1px solid red !important;
+    }
+        :root{
+          --birutua: #1E3A8A ;
+          --birumuda: #3B82F6;
+          --abutua: #374151;
+          --abumuda: #E6E6E6;
+        }
+
+        body{
+          margin: 0;
+          padding: 0;
+          background-color: #E6E6E6;
+        }
+
+        .navbar{
+          padding: 5px;
+          width: 100%;
+          background-color: #374151;
+          display: flex;
+          justify-content: space-between;
+          text-align: center;
+          position: fixed;
+          align-items: center;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 9999;
+        }
+        .navbar .menu-toggle {
+          display: none;
+          font-size: 2rem;
+          color: #fff;
+          cursor: pointer;
+          margin-right: 20px;
+        }
+
+        .navbar h1{
+          text-transform: uppercase;
+          font-size: 2.2rem;
+          font-weight: 800;
+          letter-spacing: 2px;
+          margin-left: 20px;
+          color: #fff;
+        }
+
+        .navbar a{
+          text-transform: uppercase;
+          font-size: 1.4rem;
+          font-weight: 500;
+          padding: 10px 20px;
+          align-items: center;
+          text-align: center;
+          text-decoration: none;
+          color: aliceblue;
+          transition: 0.4s;
+        }
+        .navbar a:hover{
+          padding: 10px 20px;
+          background-color: #E6E6E6;
+          border-radius: 20px;
+          color: #374151;
+          transition: 0.4s;
+        }
+
+        /* Hero */
+
+        .hero{
+          min-height: 100vh;
+        }
+
+        .utama{
+          padding: 12% 8% 1.2rem;
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .utama .content{
+          display: inline-block;
+          align-items: center;
+          padding: 10px 45px 10px 20px;
+          margin: 10px;
+        }
+
+        .utama img{
+          padding: 30px;
+          width: 300px;
+          height: 300px;
+          border-radius: 50%;
+        }
+
+        .utama h2{
+          padding-bottom: 0;
+          margin-bottom: 0;
+          text-transform: capitalize;
+          font-size: 2em;
+          font-weight: 800;
+          color: #000;
+        }
+        .utama h1{
+          margin-top: 0;
+          padding-top: 0;
+          margin-bottom: 20px;
+          font-size: 4.5em;
+          color: #1E3A8A; 
+          text-transform: capitalize;
+        }
+        .utama h3{
+          font-size: 2em;
+          color: var(--birumuda);
+          letter-spacing: 2px;
+          border-right: 3px solid;
+          width: 42%;
+          white-space: nowrap;
+          overflow: hidden;
+          animation: typing 4s steps(19) 1s forwards, infinite;
+        }
+        @keyframes cursor{
+          50%{ border-color: transparent;}
+        }
+        @keyframes typing{
+          from{width: 0;}
+        }
+        .utama p{
+          margin-top: 1px;
+          font-size: 1.8rem;
+          color: black;
+        }
+
+        .content .social-media{
+          justify-content: space-between;
+          margin: 10px 0;
+        }
+
+        .content .social-media a{
+          display: inline-block;
+          font-size: 2rem;
+          color: var(--abutua);
+          text-decoration: none;
+          margin-right: 20px;
+          transition: 0.3s;
+        }
+
+        .content .social-media a:hover{
+          transform: scale(1.4);
+          color: var(--birumuda);
+          transition: 0.3s;
+        }
+
+      /* about */
+
+      .about{
+        min-height: 100vh;
+        margin-left: 3%;
+      }
+
+      .about .container {
+            display: flex;
+            width: 90%;
+            max-width: 1200px;
+        }
+        .left-section {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .left-section h1 {
+            font-size: 5em;
+            margin: 0;
+            font-weight: 700;
+        }
+        .left-section p {
+            font-size: 1.5em;
+            color: #333;
+        }
+        .left-section .underline {
+            width: 100px;
+            height: 5px;
+            background-color: #333;
+            margin: 5px 0;
+        }
+        .left-section .underline-line{
+            width: 60px;
+            height: 5px;
+            background-color: #333;
+        }
+
+        .left-section .scroll-button {
+            margin-top: 20px;
+        }
+
+        .scroll-button a{
+          text-transform: uppercase;
+          border: 1.5px solid var(--abutua);
+          padding: 10px 20px;
+          border-radius: 5px;
+          display: inline-block;
+          transition: 0.3s;
+          font-size: 1.1em;
+          font-weight: 500;
+          text-decoration: none;
+          color: var(--abutua);
+        }
+        .scroll-button a:hover{
+          color: var(--abumuda);
+          background-color: var(--abutua);
+            color: var(--abumuda);
+            transform: scale(1.1);
+            transition: 0.3s;
+        }
+
+        .right-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .right-section img {
+          filter: grayscale(100%);
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: 0.3s;
+        }
+
+        .right-section img:hover{ 
+          filter: grayscale(0%);
+          transition: 0.3s;
+        }
+
+        /* porto */
+        .porto{
+          min-height: 100vh;
+          padding: 1rem 5%;
+        }
+        .porto h2{
+          padding-top: 5%;
+          text-transform: uppercase;
+          text-align: center;
+          font-size: 3rem;
+        }
+        .project{
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-gap: 20px;
+        }
+        .project .box{
+          margin-bottom: 3%;
+          border-radius: 20px 0 20px 0;
+          background-color: rgba(30, 59, 138, 0.194);
+          padding: 20px;
+          border: 1px solid #ddd;
+          box-shadow: 0 0 10px (0, 0, 0, 0.1);
+        }
+
+        .project .box img{
+          filter: grayscale(100%);
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          border-radius: 5px 0 5px 0;
+        }
+        .project .box img:hover{
+          filter: grayscale(0%);
+        }
+        .project .box h3{
+          text-align: center;
+          text-transform: uppercase;
+          color: black;
+          font-weight: 600;
+          font-size: 1.4rem;
+        }
+        .project .box p{
+          text-align: justify;
+          color: var(--abutua);
+          font-size: 1.1rem;
+          font-weight: 100;
+          line-height: 1.3rem;
+        }
+        .button a{
+          text-decoration: none;
+          background-color: var(--abutua);
+          padding: 10px 20px;
+          font-size: 1.2rem;
+          border-radius: 10px;
+          text-transform: uppercase;
+          color: var(--abumuda);
+          transition: 0.3s;
+        }
+        .button a:hover{
+          border: 2px solid var(--abutua);
+          color: var(--abutua);
+          background-color: var(--abumuda);
+          font-weight: 500;
+          transition: 0.3;
+        }
+
+        /* contact */
+        .contact {
+          min-height: 90vh;
+          padding: 50px 0;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+        .contact h2{
+          padding-top: 8%;
+          font-size: 3em;
+          font-weight: 800;
+          text-align: center;
+          color: #1E3A8A;
+        }
+        .contact .container{
+          background-color: var(--abutua);
+          width: 90%;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 50px 30px;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        .sosialicon{
+          display: flex;
+          justify-content: center;
+          margin: 20px 0;
+          text-align: center;
+        }
+        .sosialicon a{
+          text-decoration: none;
+          padding: 15px;
+          background-color: var(--abumuda);
+          margin: 0 10px;
+          color: var(--abutua);
+          border-radius: 50%;
+          transition: background-color 0.3s, transform 0.3s;
+        }
+        .sosialicon a i{
+          font-size: 1.8em;
+          opacity: 0.9;
+        }
+        .sosialicon a:hover{
+          background-color: var(--abutua);
+          color: var(--abumuda);
+          transition: 0.4s;
+        }
+        .footernav{
+          margin: 30px 0;
+        }
+        .footernav ul{
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          text-align: center;
+        }
+        .footernav ul li{
+          list-style: none;
+          margin: 0 15px;
+        }
+        .footernav ul li a{
+          text-transform: capitalize;
+          color: var(--abumuda);
+          margin: 20px;
+          text-decoration: none;
+          font-size: 1.3rem;
+          opacity: 0.7;
+          transition: 0.4s;
+        }
+        .footernav ul li a:hover{
+          opacity: 1;
+        }
+        .footerbotton{
+          background-color: var(--abutua);
+          padding: 20px;
+          text-align: center;
+        }
+        .footerbotton p{
+          color: var(--abumuda);
+          margin: 0;
+        }
+        .disign{
+          opacity: 0.7;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          font-weight: 400;
+          margin: 0 5px;
+        }
+/*Laptop */
+    @media (max-width: 1366px){
+    html{
+        font-size: 75%;
+      }
+    }
+/* Tablet */
+@media (max-width: 768px) {
+    html {
+        font-size: 60%;
+    }
+    .utama {
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+    }
+    .navbar h2{
+      margin-top: 0;
+    }
+    .navbar h1 {
+      margin-top: 0;
+        font-size: 1.8rem;
+    }
+    .navbar a {
+        font-size: 0.7rem; 
+    }
+    .utama img {
+      margin-bottom: 0;
+        width: 250px; 
+        height: 250px; 
+    }
+    .utama h1 {
+        font-size: 3.5em; 
+    }
+    .utama h2 {
+        font-size: 1.8em; 
+    }
+    .utama .content h3{
+      align-items: center;
+    }
+    .porto .project {
+        grid-template-columns: 1fr; 
+    }
+    .about .container {
+        flex-direction: column; 
+        align-items: center; 
+    }
+    .left-section, .right-section {
+        width: 100%; 
+    }
+    .right-section{
+      order: -1;
+    }
+}
+
+/* Mobile */
+@media (max-width: 450px) {
+    html {
+        font-size: 45%;
+    }
+    .navbar h1 {
+        font-size: 1.5rem; 
+    }
+    .navbar {
+    display: flex;
+    padding: 10px;
+  }
+
+  .navbar .menu-toggle {
+    display: inline-block;
+  }
+
+  .navbar div {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: #fff;
+        width: 30rem;
+  }
+  .navbar div a::after{
+    transform-origin: 0.0;
+  }
+
+  .navbar div a {
+    display: block;
+    padding: 8px;
+    text-align: center;
+    font-size: 1rem;
+    color: #1E3A8A;
+  }
+
+  .navbar div a:hover {
+    background-color: #fff;
+    color: var(--birutua);
+  }
+
+  .navbar div.active {
+    right: 0;
+  }
+
+    .utama img {
+        width: 200px; 
+        height: 200px; 
+    }
+    .utama h1 {
+        font-size: 2.5em; 
+    }
+    .utama h2 {
+        font-size: 1.5em;
+    }
+    .project .box {
+        margin-bottom: 10%; 
+    }
+    .contact .container {
+        padding: 30px 10px 10px; 
+    }
+    .sosialicon a {
+        padding: 5px;
+    }
+    .footernav ul li {
+        margin: 10px 0; 
+    }
+}
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <h1>
+      mario <span>prayoga</span>
+    </h1>
+    <span class="menu-toggle" onclick="toggleMenu()">&#9776;</span>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#porto">project</a>
+      <a href="#contact">contact</a>
+    </div>
+  </div>
+
+      <!-- HERO -->
+      <section id="home" class="hero">
+        <div class="utama">
+          <img src="img/mario.jpeg" alt="saya">
+          <div class="content">
+            <h2>
+              Halo saya,
+            </h2>
+            <h1>
+              i kadek mario prayoga
+            </h1>
+            <h3>
+              masih belajar
+            </h3>
+            <p>
+              saya seorang Mahasiswa Primakara jurusan Teknik Informatika
+            </p>
+            <div class="social-media">
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-github"></i></a>
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="about">
+        <div class="container">
+          <div class="left-section">
+              <h1 data-aos="fade-right" data-aos-duration="1000">
+                  About Me
+              </h1>
+              <div class="underline" data-aos="fade-right" data-aos-duration="1000"></div>
+              <div class="underline-line" data-aos="fade-right" data-aos-duration="1000"></div>
+                  <p data-aos="fade-right" data-aos-duration="1000">
+                    saya adalah seorang mahasiswa Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, tempore
+                  </p>
+              <div class="scroll-button">
+                      <a href="about.html" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">Learn more</a>
+              </div>
+              </div>
+                  <div class="right-section" data-aos="fade-left" data-aos-duration="1000">
+                      <img alt="A person" height="400" src="img/porto6.jpg" width="600"/>
+                  </div>
+          </div>
+      </section>
+
+    <!-- porto -->
+    <section id="porto" class="porto">
+      <h2 data-aos="fade-up" data-aos-duration="1000">
+        project
+      </h2>
+      <div class="project">
+        <div class="box" data-aos="zoom-in-up" data-aos-duration="1200">
+          <h3>
+            website pemesanan kompor mayat
+          </h3>
+          <img src="img/project1.png" alt="">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos repellat nesciunt tempore odio incidunt veritatis debitis officia iure laudantium! Suscipit cumque id hic repellendus earum consequatur ea unde dignissimos accusantium!
+          </p>
+        </div>
+        <div class="box" data-aos="zoom-in-up" data-aos-duration="1200">
+          <h3>
+            website pemesanan kompor mayat
+          </h3>
+          <img src="img/project2.png" alt="">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos repellat nesciunt tempore odio incidunt veritatis debitis officia iure laudantium! Suscipit cumque id hic repellendus earum consequatur ea unde dignissimos accusantium!
+          </p>
+        </div>
+      </div>
+      <div class="button" data-aos="fade-right" data-aos-duration="1200">
+        <a href="porto.html">learn more</a>
+      </div>
+    </section>
+
+    <!-- contact -->
+    
+    <section id="contact" class="contact">
+      <h2 data-aos="zoom-in-up" data-aos-duration="1000">
+        Contact Me
+      </h2>
+      <div class="container" data-aos="fade-up">
+        <div class="sosialicon">
+          <a href="#"><i class="fa-regular fa-envelope"></i></a>
+          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-github"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <div class="footernav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="porto.html">project</a></li>
+          </ul>
+        </div>
+        <div class="footerbotton">
+          <p>Copyright &copy;2024; Design by <span class="disign">mario prayoga</span></p>
+        </div>
+      </div>
+  </section>
+
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+          AOS.init();
+      </script>
+      <script src="script.js"></script>
+
+      <!-- <i class="fa-brands fa-youtube"></i> -->
+      <!-- <i class="fa-brands fa-whatsapp"></i> -->
+      <!--<i class="fa-solid fa-location-dot"></i>-->
+      <!-- <i class="fa-regular fa-user"></i> -->
+      <!-- <i class="fa-solid fa-arrow-right"></i> -->
+      <!-- <i class="fa-solid fa-bars"></i> -->
+      <!-- <i class="fa-brands fa-linkedin"></i> -->
+      <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+      <!-- <i class="fa-solid fa-phone"></i> -->
+      <!-- <i class="fa-brands fa-twitter"></i> -->
+      <!-- <i class="fa-regular fa-envelope"></i> -->
+      <!-- <i class="fa-solid fa-circle"></i> -->
+      <!-- <i class="fa-solid fa-ellipsis-vertical"></i> -->
+      <!-- <i class="fa-solid fa-ellipsis"></i> -->
+      <!-- <i class="fa-solid fa-list-ul"></i> -->
+      <!-- <i class="fa-brands fa-figma"></i> -->
+
+      <!-- progamer language -->
+      <!-- <i class="fa-brands fa-html5"></i> -->
+      <!-- <i class="fa-brands fa-css3-alt"></i> -->
+      <!-- <i class="fa-brands fa-js"></i> -->
+      <!-- <i class="fa-brands fa-laravel"></i> -->
+      <!-- <i class="fa-brands fa-php"></i> -->
+      <!-- <i class="fa-brands fa-python"></i> -->
+      
+</body>
+</html>

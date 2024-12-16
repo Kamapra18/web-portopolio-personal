@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        :root{
+        --birutua: #1E3A8A ;
+        --birumuda: #3B82F6;
+        --abutua: #374151;
+        --abumuda: #E6E6E6;
+        }
+        body{
+            background-color: var(--abumuda);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        .header {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .header i {
+            color: var(--birutua);
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+        .header .title {
+            color: black;
+            font-size: 1.5em;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .header .title span{
+            color: var(--abutua);
+        }
+        .menu-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5em;
+        }
+
+        /* porto */
+        .porto{
+            min-height: 100vh;
+            padding: 1rem 5%;
+        }
+        .porto h2{
+            padding-top: 5%;
+            padding-bottom: 0;
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+        .porto .line{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-items: center;
+        }
+        .porto .line .underline {
+            width: 400px;
+            height: 8px;
+            background-color: var(--abutua);
+            margin: 9px 0;
+            border-radius: 4px;
+        }
+        .porto .line .underline-line{
+            width: 400px;
+            height: 8px;
+            margin-left: 5%;
+            background-color: var(--abutua);
+            border-radius: 4px;
+        }
+        .project{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+        .project .box{
+            align-items: center;
+            text-align: center;
+            margin-bottom: 3%;
+            border-radius: 20px 0 20px 0;
+            background-color: rgba(30, 59, 138, 0.194);
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px (0, 0, 0, 0.1);
+        }
+
+        .project .box img{
+            filter: grayscale(100%);
+            width: 80%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 5px 0 5px 0;
+        }
+        .project .box img:hover{
+            filter: grayscale(0%);
+        }
+        .project .box h3{
+            text-align: center;
+            text-transform: uppercase;
+            color: black;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        .project .box p{
+            text-align: justify;
+            color: var(--abutua);
+            font-size: 1rem;
+            font-weight: 100;
+            line-height: 1rem;
+        }
+        .project .box a{
+            text-decoration: none;
+            background-color: var(--abutua);
+            padding: 10px 20px;
+            font-size: 0.8rem;
+            border-radius: 10px;
+            text-transform: uppercase;
+            color: var(--abumuda);
+            transition: 0.3s;
+        }
+        .project .box a:hover{
+            border: 2px solid var(--abutua);
+            color: var(--abutua);
+            background-color: rgba(30, 59, 138, 0.194);
+            font-weight: 500;
+            transition: 0.3;
+        }
+
+        /* foto */
+        #foto {
+            color: var(--putih);
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        #foto h2 {
+            text-transform: uppercase;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        #foto .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        #foto .container img {
+            filter: grayscale(100%);
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #foto .container img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        #foto p {
+            color: var(--abutua);
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        /* contact */
+        .contact {
+          min-height: 100vh;
+          padding: 50px 0;
+        }
+        .contact h2{
+          padding-top: 8%;
+          font-size: 3em;
+          font-weight: 800;
+          text-align: center;
+          color: #1E3A8A;
+        }
+        .contact .container{
+            flex-direction: column;
+          background-color: var(--abutua);
+          width: 90%;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 50px 30px;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .sosialicon{
+          display: flex;
+          justify-content: center;
+          margin: 20px 0;
+        }
+        .sosialicon a{
+          text-decoration: none;
+          padding: 15px;
+          background-color: var(--abumuda);
+          margin: 0 10px;
+          color: var(--abutua);
+          border-radius: 50%;
+          transition: background-color 0.3s, transform 0.3s;
+        }
+        .sosialicon a i{
+          font-size: 2em;
+          opacity: 0.9;
+        }
+        .sosialicon a:hover{
+          background-color: var(--abutua);
+          color: var(--abumuda);
+          transition: 0.4s;
+        }
+        .footernav{
+          margin: 30px 0;
+        }
+        .footernav ul{
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+        .footernav ul li{
+          list-style: none;
+          margin: 0 15px;
+        }
+        .footernav ul li a{
+          text-transform: capitalize;
+          color: var(--abumuda);
+          margin: 20px;
+          text-decoration: none;
+          font-size: 1.3rem;
+          opacity: 0.7;
+          transition: 0.4s;
+        }
+        .footernav ul li a:hover{
+          opacity: 1;
+        }
+        .footerbotton{
+          background-color: var(--abutua);
+          padding: 20px;
+          text-align: center;
+        }
+        .footerbotton p{
+          color: var(--abumuda);
+          margin: 0;
+        }
+        .disign{
+          opacity: 0.7;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          font-weight: 400;
+          margin: 0 5px;
+        }
+    @media (max-width: 1366px){
+    html{
+        font-size: 85%;
+        }
+    }
+    @media (max-width: 768px) {
+    html {
+        font-size: 60%;
+    }
+    .project {
+        grid-template-columns: 1fr; 
+    }
+
+    .header .title {
+        font-size: 1.4em; 
+    }
+
+    .header i {
+        font-size: 1.2em; 
+    }
+
+    .porto h2 {
+        font-size: 2rem; 
+    }
+    .porto .line .underline {
+        height: 3px;
+    }
+    .porto .line .underline-line{
+        height: 3px;
+    }
+
+    .porto .box{
+        align-items: center;
+        width: 90%;
+    }
+
+    .porto .box h3 {
+        font-size: 1.3rem; 
+    }
+
+    .porto .box p {
+        font-size: 1rem; 
+        padding: 10px 30px;
+    }
+    .porto .box img{
+        width: 60%;
+    }
+
+    #foto h2 {
+        font-size: 2rem; 
+    }
+    #foto p {
+        font-size: 1rem; 
+    }
+    #foto .container{
+        grid-template-columns: repeat(2,1fr);
+    }
+    #foto .container img{
+        width: 95%;
+    }
+    .contact h2 {
+        font-size: 2.5em; 
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+    .header .title {
+        font-size: 1em; 
+    }
+
+    .porto h2 {
+        font-size: 1.5rem; 
+    }
+
+    .project .box h3 {
+        font-size: 1.2rem; 
+    }
+
+    .project .box p {
+        font-size: 0.8rem; 
+    }
+
+    #foto h2 {
+        font-size: 1.5rem; 
+    }
+
+    #foto p {
+        font-size: 0.9rem;
+    }
+
+    .contact h2 {
+        font-size: 2em; 
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html"><i class="fas fa-arrow-left"></i></a>
+        <div class="title">
+            Mario <span>prayoga</span>
+        </div>
+    </div>
+
+    <!-- project web -->
+    <section id="porto" class="porto">
+        <h2>
+            project
+        </h2>
+        <div class="line">
+            <div class="underline" data-aos="fade-right" data-aos-duration="1000"></div>
+            <div class="underline-line" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200"></div>
+        </div>
+        <div class="project">
+            <div class="box">
+                <h3>
+                    website pemesanan kompor mayat
+                </h3>
+                <img src="img/project1.png" alt="">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos repellat nesciunt tempore odio incidunt
+                    veritatis debitis officia iure laudantium! Suscipit cumque id hic repellendus earum consequatur ea unde
+                    dignissimos accusantium!
+                </p>
+                <a href="porto.html">learn more</a>
+            </div>
+            <div class="box">
+                <h3>
+                    website daftar barang
+                </h3>
+                <img src="img/project2.png" alt="">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos repellat nesciunt tempore odio incidunt
+                    veritatis debitis officia iure laudantium! Suscipit cumque id hic repellendus earum consequatur ea unde
+                    dignissimos accusantium!
+                </p>
+                <a href="porto.html">learn more</a>
+            </div>
+            <div class="box" data-aos="zoom-in-up" data-aos-duration="1200">
+                <h3>
+                    website pemesanan barang
+                </h3>
+                <img src="img/project3.png" alt="">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos repellat nesciunt tempore odio incidunt
+                    veritatis debitis officia iure laudantium! Suscipit cumque id hic repellendus earum consequatur ea unde
+                    dignissimos accusantium!
+                </p>
+                <a href="porto.html">learn more</a>
+            </div>
+            <div class="box" data-aos="zoom-in-up" data-aos-duration="1200" data-aos-delay="200">
+                <h3>
+                    website absensi
+                </h3>
+                <img src="img/project4.png" alt="">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos repellat nesciunt tempore odio incidunt
+                    veritatis debitis officia iure laudantium! Suscipit cumque id hic repellendus earum consequatur ea unde
+                    dignissimos accusantium!
+                </p>
+                <a href="porto.html">learn more</a>
+            </div>
+            <div class="box" data-aos="zoom-in-up" data-aos-duration="1200" data-aos-delay="300">
+                <h3>
+                    website karyawan
+                </h3>
+                <img src="img/project5.png" alt="">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos repellat nesciunt tempore odio incidunt
+                    veritatis debitis officia iure laudantium! Suscipit cumque id hic repellendus earum consequatur ea unde
+                    dignissimos accusantium!
+                </p>
+                <a href="porto.html">learn more</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- foto -->
+    <section id="foto" class="foto">
+        <h2>Fotografi</h2>
+        <p>
+            Galeri karya fotografi saya:
+        </p>
+        <div class="container" data-aos="fade-up" data-aos-duration="2000">
+            <img src="img/porto1.jpeg" alt="Foto 1">
+            <img src="img/porto2.jpeg" alt="Foto 2">
+            <img src="img/porto3.jpg" alt="Foto 3">
+            <img src="img/porto4.jpg" alt="Foto 4">
+            <img src="img/porto5.jpg" alt="Foto 5">
+            <img src="img/porto7.jpg" alt="Foto 6">
+            <img src="img/porto8.JPG" alt="Foto 7">
+            <img src="img/porto9.jpeg" alt="Foto 8">
+            <img src="img/porto10.JPG" alt="Foto 9">
+            <img src="img/porto11.JPG" alt="Foto 10">
+            <img src="img/porto12.JPG" alt="Foto 11">
+        </div>
+    </section>
+
+    <!-- contact -->
+    <section id="contact" class="contact">
+        <h2 data-aos="zoom-in-up" data-aos-duration="1000">
+            Contact Me
+        </h2>
+        <div class="container" data-aos="fade-up" data-aos-duration="1000">
+            <div class="sosialicon" data-aos="fade-right" data-aos-duration="2000">
+                <a href="#"><i class="fa-regular fa-envelope"></i></a>
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <div class="footernav" data-aos="zoom-in" data-aos-duration="2000">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">about</a></li>
+                    <li><a href="porto.html">project</a></li>
+                </ul>
+            </div>
+            <div class="footerbotton">
+                <p>Copyright &copy;2024; Design by <span class="disign">mario prayoga</span></p>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
